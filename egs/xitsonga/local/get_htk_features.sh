@@ -2,6 +2,7 @@
 
 # Begin configuration section.
 cmd=run.pl
+cmvn_opts=
 # End configuration section.
 
 echo "$0 $@"  # Print the command line for logging
@@ -27,7 +28,7 @@ done
 nj=`cat $exp_dir/num_jobs` || exit 1;
 sdata=$data_in/split$nj;
 splice_opts=`cat $exp_dir/splice_opts 2>/dev/null` # frame-splicing options.
-cmvn_opts=`cat $exp_dir/cmvn_opts 2>/dev/null`
+[ -z $cmvn_opts ] && cmvn_opts=`cat $exp_dir/cmvn_opts 2>/dev/null`
 delta_opts=`cat $exp_dir/delta_opts 2>/dev/null`
 
 mkdir -p $data_out/log
