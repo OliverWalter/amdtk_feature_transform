@@ -1,5 +1,16 @@
 #!/usr/bin/env bash
 
+set -e
+
+source ./path.sh
+source ./setup.sh
+
+####################################
+## Link steps and utils directory ##
+####################################
+ln -sf $KALDI_ROOT/egs/wsj/s5/steps
+ln -sf $KALDI_ROOT/egs/wsj/s5/utils
+
 ##############################
 ## Step 0: Data preparation ##
 ##############################
@@ -53,7 +64,7 @@ utils/prepare_lang.sh \
 ## run monophone training (plp + delta + delta-delta features) ##
 ##################################################################
 steps/train_mono.sh \
-    --cmvn-opts="--norm-vars=true"
+    --cmvn-opts "--norm-vars=true" \
     data/train \
     data/lang \
     exp/mono
@@ -68,6 +79,7 @@ steps/align_si.sh \
 ## run triphone training (lvtln + plp + delta + delta-delta features) ##
 ########################################################################
 steps/train_lvtln.sh \
+    --cmvn-opts "--norm-vars=true" \
     --base-feat-type plp \
     2000 \
     10000 \

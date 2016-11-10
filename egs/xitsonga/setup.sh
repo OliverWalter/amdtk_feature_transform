@@ -12,4 +12,4 @@
 amdtk_exp_dir='/scratch/owb/Downloads/amdtk/recipes/xitsonga'
 keys='data/va.keys'
 scp='data/va.scp'
-labels='ploop_lmfcc_c1_T100_s3_g2_a3_b3/bigram_labels'
+labels='ploop_mfcc_c1_T100_sil0_s3_g2_a3_b3/bigram_labels'
