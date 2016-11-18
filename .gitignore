@@ -1,2 +1,10 @@
-egs/xitsonga/data
-egs/xitsonga/exp
+/egs/*
+!/egs/xitsonga
+!/egs/wsj
+!/egs/wsj
+!/egs/wsj_segments
+!/egs/wsj_segments_no_punc
+/egs/*/data
+/egs/*/exp
+/egs/*/steps
+/egs/*/utils
