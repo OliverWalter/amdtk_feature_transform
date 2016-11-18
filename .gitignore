@@ -1,9 +1,8 @@
 /egs/*
 !/egs/xitsonga
-!/egs/wsj
+!/egs/xitsonga_per_utterance
 !/egs/wsj
 !/egs/wsj_segments
-!/egs/wsj_segments_no_punc
 /egs/*/data
 /egs/*/exp
 /egs/*/steps
